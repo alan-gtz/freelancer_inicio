@@ -11,7 +11,17 @@
 /* globales */
 html{
     font-size: 62.5%;
-    box-sizing: border-box; /* Hack oara box model */
+    box-sizing: border-box; /* Hack para box model */
+    scroll-snap-type: y mandatory; /* Para hacer el scroll de arriba hacia abajo */
+}
+
+/* Scroll Snap */
+.servicios, 
+.navegacion-principal, 
+.formulario, 
+.footer{
+    scroll-snap-align: center; 
+    scroll-snap-stop: always; /* Para hacer que se detenga en cada clase creada sin que se salte ninguna */
 }
 
 *, *:before, *:after {
@@ -175,6 +185,8 @@ h1,h2,h3{
     align-items: flex-end;
 }
 
+
+/* SERVICIOS */
 @media (min-width: 768px) {
     .servicios {
         display: grid;
@@ -183,7 +195,6 @@ h1,h2,h3{
     }
 }
 
-/* SERVICIOS */
 .servicio {
     display: flex;
     flex-direction: column;
@@ -267,6 +278,10 @@ h1,h2,h3{
 
 .campo textarea{
     height: 20rem;
+}
+
+.enviar{
+    padding-top: 1.5rem;
 }
 
 /* FOOTER */
