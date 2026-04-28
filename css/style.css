@@ -1,0 +1,276 @@
+/* colores */
+:root{
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #ffc107;
+    --secundario: #0097a7;
+    --gris: #757575;
+    --gris_claro: #dfe9f3;
+}
+
+/* globales */
+html{
+    font-size: 62.5%;
+    box-sizing: border-box; /* Hack oara box model */
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body{
+    font-size: 16px; /*1 rem = 10px*/
+    font-family: "Krub", sans-serif; /* EL QUE SACAMOS DE GOOGLE FONTS */
+    background-image: linear-gradient(to top, var(--gris_claro) 0%, var(--blanco) 100%);
+}
+
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto 0 auto; /* Orden: Top-Right-Bottom-Left */   
+}
+
+.boton{
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem 1rem 3rem;
+    margin-top: 3rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700; /* TAMBIEN PODEMOS USAR BOLD (ES LO MISMO) */
+    border-radius: 1rem;
+    text-align: center;
+    width: 90%;
+    border: none;
+
+}
+
+@media (min-width: 768px) {
+    .boton {
+        width: auto; /* PARA QUE CUANDO ESTE EN UNA PANTALLA  DE ESTE TAMAÑO O SUPERIOR SE REAJUSTE */
+    }
+}
+
+.boton:hover{
+    cursor: pointer;
+}
+
+.sombra {
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.55);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.55);
+    box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.55);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+
+/* Tipografía */
+h1{
+    font-size: 3.5rem;
+}
+
+h2{
+    font-size: 2.5rem;
+}
+
+h3{
+    font-size: 1.5rem;
+}
+
+h1,h2,h3{
+    text-align: center;
+}
+
+
+/* Titulos */
+.titulo span {
+    font-size: 2rem;
+}
+
+/* Utilidades */
+
+.w-sm-100{
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .w-sm-100{
+        width: auto;
+    }
+}
+
+.flex{
+    display: flex;
+}
+
+.alinear-derecha{
+    justify-content: flex-end;
+}
+
+
+/* Navegacion principal */
+.nav-bg{
+    background-color: var(--secundario);
+}
+
+.navegacion-principal{
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .navegacion-principal{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.navegacion-principal a{
+    display: block;
+    text-align: center;
+    padding: 1rem;
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.navegacion-principal a:hover{
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+
+
+/* hero */
+.hero{
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 45rem;
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.contenido-hero{
+    position: absolute;
+    /* background-color: rgba(0,0,0,.6); otra opcion con rgba */ 
+    background-color: rgb(0 0 0 / 70%);
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-hero h2,
+.contenido-hero p{
+    color: var(--blanco);
+}
+
+.contenido-hero .ubicacion{
+    display: flex;
+    align-items: flex-end;
+}
+
+@media (min-width: 768px) {
+    .servicios {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr; /* 1fr significa que toma 1 fraccion respecto al 100% en este caso usa el 33.3% */
+        column-gap: 1.5rem;
+    }
+}
+
+/* SERVICIOS */
+.servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servicio h3{
+    color: var(--secundario);
+    font-weight: 400; /* grosor de la letra "defalut es bold-700" */
+}
+
+.servicio p{
+    line-height: 2; /* para darle interlineado al texto */
+    text-align: center;
+}
+
+.servicio .iconos{
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly; /* para alinear horizontalmente */
+    align-items: center; /* para alinear verticalmente  */
+}
+
+/* CONTACTO */
+.formulario{
+    background-color: var(--gris);
+    width: min(60rem, 100%); /* Para Utilizar el valor mas pequeño */
+    margin: 0 auto 0 auto;
+    padding: 2rem;
+    border-radius: 1.5rem;
+}
+
+.formulario fieldset{
+    border: none;
+}
+
+.formulario legend{
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primario);
+}
+
+@media (min-width: 768px) {     /* Que lo aplique apartir de los 768px */
+    .contenedor-campos{
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Para separar el diseño en dos columnas */
+        grid-template-rows: auto auto 20rem;
+        column-gap: 1.5rem; /* Para darle separacion a las columnas */
+    }
+
+    .campo:nth-child(3),    /* Para que le aplique los cambios a la clase del campo 3 */
+    .campo:nth-child(4){    /* Para que le aplique los cambios a la clase del campo 3 */
+        grid-column: 1 / 3; /* Para que abarque desde la culumna 1 a la 3 */
+        
+    }
+}
+
+.campo{
+    margin-bottom: 1rem;
+}
+
+.campo label{
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+
+.input-text{
+    width: 100%; /* Para que tome todo el espacio disponible a lo ancho */
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+
+.campo textarea{
+    height: 20rem;
+}
+
+/* FOOTER */
+
+.footer{
+    text-align: center;
+}
